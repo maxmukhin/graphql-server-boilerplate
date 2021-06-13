@@ -4,14 +4,16 @@
   "private": true,
   "scripts": {
     "lint": "tslint -p tsconfig.json",
+    "startdb": "mongod --dbpath mdb",
     "start": "nodemon",
+    "pm2": "pm2 start -i 10 ts-node -- -P tsconfig.json ./src/index.ts",
     "clean": "rimraf dist",
     "test": "mocha -r ts-node/register src/__test__/**/*.ts",
     "build": "yarn run clean && tsc --build"
   },
   "author": {
-    "name": "HANSUK KIM",
-    "email": "hansuk.kim@navercorp.com"
+    "name": "Max Mukhin",
+    "email": "maxmukhin@gmail.com"
   },
   "license": "MIT",
   "devDependencies": {

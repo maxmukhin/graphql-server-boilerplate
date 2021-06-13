@@ -14,14 +14,14 @@ import { logger } from './logger';
 
 function runServer() {
   const app = express();
-  const port = 10000;
+  const port = 4000;
 
   if (process.env.NODE_ENV === 'development') {
     app.use(errorhandler());
   }
 
-  // compression : recommanded to use nginx gzip compression directive
-  // response header : recommanded to use nginx add header directive
+  // compression : recommended to use nginx gzip compression directive
+  // response header : recommended to use nginx add header directive
 
   app.use(cookieParser());
 
@@ -47,7 +47,7 @@ function runServer() {
 }
 
 function applyApollo(app: any) {
-  // applly apollo confing to express app
+  // apply apollo config to express app
   const apolloConfig: ApolloServerExpressConfig = {
     schema: allSchema,
     context: async ctx => {
